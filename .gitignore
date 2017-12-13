@@ -1,0 +1,5 @@
+src/react-dashboard-components
+
+node_modules
+.idea
+.DS_Store
