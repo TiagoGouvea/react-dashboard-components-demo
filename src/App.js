@@ -4,7 +4,7 @@ import './App.css';
 import {Col, Row} from "react-flexbox-grid";
 
 // Import it from @app-masters/react-dashboard-components
-import {SimpleTextBox} from "./react-dashboard-components/src/";
+import {SimpleTextBox, RunningProgress} from "./react-dashboard-components/src/";
 
 class App extends Component {
     render() {
@@ -14,13 +14,14 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">React Dashboard Components</h1>
                 </header>
+                <h1>SimpleTextBox</h1>
                 <Row>
                     <Col md={4} style={{display: 'flex'}}>
                         <SimpleTextBox
                             title={90}
                             subTitle={"Sales today"}
                             boxStyle={{background: '#ff9c00'}}
-                            titleStyle={{color:"white"}}
+                            titleStyle={{color: "white"}}
                             subTitleStyle={{fontWeight: '600'}}
                         />
                     </Col>
@@ -35,7 +36,7 @@ class App extends Component {
                         <SimpleTextBox
                             title={"44%"}
                             subTitle={"Completed"}
-                            boxStyle={{background: '#00ff51'}}
+                            style={style.green}
                         />
                     </Col>
                 </Row>
@@ -72,9 +73,52 @@ class App extends Component {
                         />
                     </Col>
                 </Row>
+                <h1>RunningProgress</h1>
+
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                    <RunningProgress
+                        title={"Tiago"}
+                        value={90}
+                    />
+                    <RunningProgress
+                        title={"Raquel"}
+                        value={75}
+                        barStyle={{backgroundColor: '#ff9c00'}}
+                    />
+                    <RunningProgress
+                        title={"Heitor"}
+                        value={55}
+                        style={{
+                            titleStyle:{
+                                color: '#ff3800'
+                            },
+                            barStyle: {
+                                backgroundColor: '#ff3800',
+                                color: '#000'
+                            },
+                            backStyle: { backgroundColor: '#212121'}
+                        }}
+                    />
+                </div>
             </div>
         );
     }
 }
+
+
+const style = {
+    green: {
+        boxStyle: {
+            backgroundColor: '#1bff00'
+        },
+        titleStyle: {
+            color: '#FFF'
+        },
+        subTitleStyle: {
+            color: '#FFF'
+        }
+    }
+};
+
 
 export default App;
