@@ -14,6 +14,7 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">React Dashboard Components</h1>
                 </header>
+                <p>Sample use of <a href="https://github.com/app-masters/react-dashboard-components">react-dashboard-components</a>, created by <a href='https://github.com/TiagoGouvea'>@TiagoGouvea</a> at <a href="https://github.com/app-masters">App Masters</a>.</p>
                 <h1>SimpleTextBox</h1>
                 <Row>
                     <Col md={4} style={{display: 'flex'}}>
@@ -98,6 +99,16 @@ class App extends Component {
                             },
                             backStyle: { backgroundColor: '#212121'}
                         }}
+                    />
+                    <RunningProgress
+                        title={"Joca"}
+                        value={15}
+                        barStyle={{backgroundColor: '#ff3800'}}
+                    />
+                    <RunningProgress
+                        title={"Reginaldo Costa"}
+                        value={null}
+                        barStyle={{backgroundColor: '#ff3800'}}
                     />
                 </div>
             </div>
